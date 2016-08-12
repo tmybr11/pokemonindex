@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html ng-app="pokemon">
+    
+    <head>
+        
+        <title>Pokémon Index</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <meta charset="UTF-8">
+        
+    </head>
+    
+    <body ng-controller="PokemonController as poke">
+    
+        <div ng-repeat="pokemon in poke.pokemons">
+            <h3>{{pokemon.name}}</h3>
+            <p>Pokémon CP: {{pokemon.cp}}</p>
+            <p>Pokémon HP: {{pokemon.hp}}</p>
+            <p>Pokémon type: {{pokemon.type}}</p>
+        </div>
+        
+        <form name="pkForm" ng-submit="pkForm.$valid && poke.addPokemon()" novalidate>
+            
+            <label>Name: </label>
+            <input type="text" ng-model="poke.newPokemon.name" required>
+            <label>CP: </label>
+            <input type="number" ng-model="poke.newPokemon.cp" required>
+            <label>HP: </label>
+            <input type="number" ng-model="poke.newPokemon.hp" required>
+            <label>Type: </label>
+            <input type="text" ng-model="poke.newPokemon.type" required>
+            
+            <div>Information is {{pkForm.$valid}}</div>
+            <input type="submit" value="Submit">
+            
+        </form>
+
+        <span>The strongest pokémon is {{poke.strongest.name}}</span>
+        
+    </body>
+    
+</html>
