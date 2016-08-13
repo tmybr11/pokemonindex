@@ -25,6 +25,17 @@
         
     });
     
+    app.directive( "pokemonShow", function() {
+        
+        return {
+            
+            restrict: "E",
+            templateUrl: "pokemon-show.html"
+            
+        }; 
+        
+    });
+    
     var list = [];
 
 })();

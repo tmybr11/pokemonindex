@@ -16,10 +16,7 @@
     <body ng-controller="PokemonController as poke">
     
         <div ng-repeat="pokemon in poke.pokemons">
-            <h3>{{pokemon.name}}</h3>
-            <p>Pokémon CP: {{pokemon.cp}}</p>
-            <p>Pokémon HP: {{pokemon.hp}}</p>
-            <p>Pokémon type: {{pokemon.type}}</p>
+            <pokemon-show></pokemon-show>
         </div>
         
         <form name="pkForm" ng-submit="pkForm.$valid && poke.addPokemon()" novalidate>
